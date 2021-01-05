@@ -1,0 +1,58 @@
+﻿@model Pro1.Models.Portofolio
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2 class="text-center alert alert-success">Details</h2>
+
+<div>
+    <h4>Portofolio</h4>
+    <hr />
+
+    <table class="table table-hover">
+        <tr class="alert alert-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.Prt_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prt_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prt_Client)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prt_Categry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prt_img)
+            </th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Prt_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Prt_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Prt_Client)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Prt_Categry)
+            </td>
+            <td>
+                <img src="~/Image/@Model.Prt_img" alt="Alternate Text" style="width:100px; height:100px;border:1px solid white ; border-radius:50px; " />
+                @*@Html.DisplayFor(modelItem => item.Prt_img)*@
+            </td>
+        </tr>
+    </table>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Prt_Id }, new { @class = "btn btn-outline-success" }) 
+    @Html.ActionLink("Back to List", "AdminIndex",null,new {@class= "btn btn-outline-info" })
+</p>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Pro1.Models.Portofolio>
+
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+    <h2 class="alert alert-danger text-center">List Of Portofolio</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null,new {@class= "btn btn-outline-primary" })
+</p>
+<table class="table table-hover ">
+    <tr class="alert alert-dark" >
+        <th>
+            @Html.DisplayNameFor(model => model.Prt_img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prt_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prt_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prt_Client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prt_Categry)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        <img src="~/Image/@item.Prt_img" alt="Alternate Text" style="width:100px; height:100px;border:1px solid white ; " class="img img-thumbnail" />
+        @*@Html.DisplayFor(modelItem => item.Prt_img)*@
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Prt_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Prt_Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Prt_Client)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Prt_Categry)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Prt_Id }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Details", "Details", new { id = item.Prt_Id }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Delete", "Delete", new { id = item.Prt_Id }, new { @class = "btn btn-danger" })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Pro1.Models.Service>
+
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+    <h2 class="alert alert-danger text-center">List Of Services</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-outline-primary" })
+</p>
+<table class="table table-hover ">
+    <tr class="alert alert-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.sr_Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sr_Name)
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.sr_Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Details", "Details", new { id = item.sr_Id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.sr_Id }, new { @class = "btn btn-danger" })
+            </td>  
+        </tr>
+    }
+
+</table>

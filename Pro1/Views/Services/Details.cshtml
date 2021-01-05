@@ -1,0 +1,40 @@
+﻿@model Pro1.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2 class="text-center alert alert-success">Details</h2>
+<div>
+    <h4>Service</h4>
+    <hr />
+
+    <table class="table table-hover">
+        <tr class="alert alert-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.sr_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sr_Dis)
+            </th>
+
+            <th></th>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.sr_Name)
+            </td>
+            <td class="text-justify text-center">
+                @Html.DisplayFor(model => model.sr_Dis)
+            </td>
+
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.sr_Id }, new { @class = "btn btn-outline-success" })
+    @Html.ActionLink("Back to List", "AdminIndex", null, new { @class = "btn btn-outline-info" })
+</p>
